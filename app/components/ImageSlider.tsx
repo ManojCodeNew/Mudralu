@@ -4,17 +4,17 @@ import Image from 'next/image'
 
 const slides = [
   {
-    src: '/temple-sunrise.jpg',
-    title: 'ಆಧ್ಯಾತ್ಮಿಕ ಬೆಳಕು',
-    subtitle: 'Spiritual Light'
-  },
-  {
-    src: '/deity-worship.jpg',
+    src: '/sdp-mudralu-1.webp',
     title: 'ಭಕ್ತಿಯ ಮಾರ್ಗ',
     subtitle: 'Path of Devotion'
   },
   {
-    src: '/deepa.jpg',
+    src: '/sdp-mudralu.jpg',
+    title: 'ಆಧ್ಯಾತ್ಮಿಕ ಬೆಳಕು',
+    subtitle: 'Spiritual Light'
+  },
+  {
+    src: '/deepa-mudralu.webp',
     title: 'ದೀಪದ ಶಕ್ತಿ',
     subtitle: 'Power of Light'
   }
@@ -33,26 +33,29 @@ export default function ImageSlider () {
   }
 
   return (
-    <div className='shadow-lg mx-auto mt-6 rounded-2xl w-full max-w-6xl overflow-hidden'>
+    <div className='shadow-lg mx-auto mt-6 rounded-2xl w-full max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8'>
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className='relative'>
-            <Image
-              src={slide.src}
-              alt={slide.title}
-              width={1200}
-              height={600}
-              className='shadow-2xl w-full h-[400px] sm:h-[500px] object-cover'
-            />
-            <div className='absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent'></div>
-
-            <div className='absolute inset-0 flex flex-col justify-end items-center bg-gradient-to-t from-black/50 to-transparent pb-6 text-center'>
-              <h2 className='drop-shadow-md font-bold text-white text-3xl sm:text-4xl'>
-                {slide.title}
-              </h2>
-              <p className='text-white/90 text-sm sm:text-base'>
-                {slide.subtitle}
-              </p>
+            <div className='relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px]'>
+              <Image
+                src={slide.src}
+                alt={slide.title}
+                fill
+                className='shadow-2xl rounded-2xl object-cover'
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw'
+                priority={index === 0}
+              />
+              <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-2xl'></div>
+              
+              <div className='absolute inset-0 flex flex-col justify-end items-center p-6 sm:p-8 lg:p-12 text-center'>
+                <h2 className='drop-shadow-lg font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2'>
+                  {slide.title}
+                </h2>
+                <p className='text-white/90 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl'>
+                  {slide.subtitle}
+                </p>
+              </div>
             </div>
           </div>
         ))}
