@@ -1,0 +1,46 @@
+{
+  "name": "ಭಕ್ತಿ ಗೀತೆಗಳು - Mudralu Temple Devotional Songs",
+  "short_name": "Bhakti Geethe",
+  "description": "Complete collection of Kannada devotional songs, bhajans, and spiritual lyrics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7f1",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "kn",
+  "dir": "ltr",
+  "categories": ["music", "religion", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.jpg",
+      "sizes": "720x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ]
+}

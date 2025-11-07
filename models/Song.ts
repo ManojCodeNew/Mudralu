@@ -8,4 +8,4 @@ const SongSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now }
 })
 
-export default mongoose.models.Song || mongoose.model('bhajane', SongSchema)
+export default mongoose.models.bhajane || mongoose.model('bhajane', SongSchema)

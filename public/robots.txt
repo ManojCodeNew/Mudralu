@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Disallow: /Admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+Disallow: /Admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /Admin/
+
+User-agent: Slurp
+Allow: /
+Disallow: /Admin/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /Admin/
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /Admin/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /Admin/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://mudralu.netlify.app/sitemap.xml

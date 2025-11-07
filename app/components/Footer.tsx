@@ -19,6 +19,13 @@ export default function Footer () {
   }
   return (
     <footer className='bg-[#fff8f3] shadow-inner px-6 sm:px-12 py-8 rounded-t-2xl text-gray-700'>
+      <div className='flex justify-center mt-6'>
+        <img
+          src='/logo-png.png'
+          alt='logo'
+          className='w-auto h-18 object-contain'
+        />
+      </div>
       {/* Main grid */}
       <div className='gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
         {/* Section 1 */}
