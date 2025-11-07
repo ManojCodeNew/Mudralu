@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
-import { FiSearch, FiMoon } from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi'
 
 export default function Navbar () {
-  const [darkMode, setDarkMode] = useState(false)
+
   const [smallScreen, setSmallScreen] = useState(false)
   const handleProfile = () => {}
   return (
@@ -31,11 +31,7 @@ export default function Navbar () {
         <input
           type='text'
           placeholder='ಹಾಡನ್ನು ಹುಡುಕಿ...'
-          className={`flex-1 bg-transparent px-2 sm:px-3 py-2 rounded-full focus:outline-none text-sm sm:text-base ${
-            darkMode
-              ? 'text-white placeholder-gray-300'
-              : 'text-gray-700 placeholder-gray-500'
-          }`}
+          className='flex-1 bg-transparent px-2 sm:px-3 py-2 rounded-full focus:outline-none text-sm sm:text-base text-gray-700 placeholder-gray-500'
         />
       </div>
 

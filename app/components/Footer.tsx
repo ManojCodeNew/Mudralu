@@ -37,9 +37,9 @@ export default function Footer () {
             ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ
           </h2>
           <div className='flex space-x-3'>
-            <div className='hover:bg-orange-100 p-2 border border-gray-300 rounded-md transition cursor-pointer'>
+            <div className='hover:bg-green-300 rounded-md transition'>
               <button
-                className='text-gray-700 fab fa-whatsapp'
+                className='p-2 border border-green-400 rounded-lg text-green-700 text-3xl cursor-pointer fab'
                 onClick={handleWhatsappClick}
               >
                 <FaWhatsapp />

@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "dompurify": "^3.3.0",
     "framer-motion": "^12.23.24",
     "mongodb": "^6.20.0",
     "mongoose": "^8.19.3",

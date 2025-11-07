@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSongs } from '../context/SongsContext'
 
 interface Song {
@@ -24,8 +24,6 @@ export default function BhaktigeetheList () {
   if (error)
     return <div className='py-10 text-red-500 text-center'>Error: {error}</div>
 
-  if (loading) return <div>Loading...</div>
-
 
   return (
     <div className='bg-[#fff7f1] px-4 sm:px-6 md:px-10 py-10 min-h-screen'>
@@ -35,10 +33,9 @@ export default function BhaktigeetheList () {
 
       {/* Responsive Grid */}
       <div className='gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-        {songs.map((bhajane: any, index: number) => (
+        {songs.map((bhajane: Song) => (
           <div
-            key={index}
-            id={bhajane._id}
+            key={bhajane._id}
             onClick={() =>
               (window.location.href = `/Bhaktigeethe/lyrics/${bhajane._id}`)
             }

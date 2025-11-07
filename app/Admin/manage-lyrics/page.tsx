@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { useSongs } from '@/app/context/SongsContext'
 
 interface Song {
@@ -10,7 +10,7 @@ interface Song {
   createdAt: string
 }
 
-export default function page () {
+export default function Page () {
   const { songs, loading, error, deleteData, updateData } = useSongs()
   const [editingSong, setEditingSong] = useState<string | null>(null)
   const [editTitle, setEditTitle] = useState('')
@@ -47,7 +47,7 @@ export default function page () {
       setEditingSong(null)
       setEditTitle('')
       setEditLyrics('')
-    } catch (error) {
+    } catch {
       alert('Error updating song')
     }
   }

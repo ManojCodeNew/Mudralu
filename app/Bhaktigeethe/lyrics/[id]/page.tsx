@@ -2,13 +2,7 @@
 import { useSongs } from '@/app/context/SongsContext'
 import React from 'react'
 
-interface Song {
-  _id: string
-  title: string
-  lyrics: string
-  uploader: string
-  createdAt: string
-}
+
 
 function BhajaneDetailPage ({ params }: { params: Promise<{ id: string }> }) {
   const { getById, loading } = useSongs()

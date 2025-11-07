@@ -1,16 +1,16 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
-import { FiBold, FiItalic, FiLink, FiImage, FiList } from 'react-icons/fi'
+import { FiBold, FiItalic } from 'react-icons/fi'
 import { useSongs } from '@/app/context/SongsContext'
 
 export default function AddLyrics () {
   const [title, setTitle] = useState<string>('')
   const [placeholderIndex, setPlaceholderIndex] = useState<number>(0)
+  const [mounted, setMounted] = useState(false)
   const textareaRef = useRef<HTMLDivElement>(null)
   const [savedSelection, setSavedSelection] = useState<Range | null>(null)
 
-  const { addData, loading: contextLoading } = useSongs()
+  const { addData } = useSongs()
 
   const placeholders: string[] = [
     'Start writing your lyrics here...',
@@ -19,12 +19,13 @@ export default function AddLyrics () {
   ]
 
   useEffect(() => {
+    setMounted(true)
     const interval = setInterval(() => {
       setPlaceholderIndex(prevIndex => (prevIndex + 1) % placeholders.length)
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [placeholders.length])
 
   const saveSelection = () => {
     const selection = window.getSelection()
@@ -52,7 +53,7 @@ export default function AddLyrics () {
   }
 
   const [content, setContent] = useState('')
-  const [loading, setLoading] = useState(false)
+
 
   const handlePublish = async () => {
     if (!title || !content) {
@@ -74,7 +75,7 @@ export default function AddLyrics () {
       if (textareaRef.current) {
         textareaRef.current.innerHTML = ''
       }
-    } catch (error) {
+    } catch {
       alert('Error publishing song')
     }
   }
@@ -131,7 +132,7 @@ export default function AddLyrics () {
           onInput={() => setContent(getContent())}
           suppressContentEditableWarning
           className='bg-transparent mt-6 border-none outline-none w-full min-h-64 text-lg leading-relaxed'
-          data-placeholder={placeholders[placeholderIndex]}
+          data-placeholder={mounted ? placeholders[placeholderIndex] : placeholders[0]}
           style={{
             whiteSpace: 'pre-wrap',
             wordWrap: 'break-word'
