@@ -4,11 +4,12 @@ import Song from '@/models/Song'
 
 export async function GET (
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await dbConnect()
-    const song = await Song.findById(params.id)
+    const { id } = await params
+    const song = await Song.findById(id)
     if (!song) {
       return NextResponse.json({ error: 'Song not found' }, { status: 404 })
     }
@@ -20,13 +21,14 @@ export async function GET (
 
 export async function PUT (
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await dbConnect()
+    const { id } = await params
     const body = await request.json()
     const song = await Song.findByIdAndUpdate(
-      params.id,
+      id,
       { ...body, updatedAt: new Date() },
       { new: true }
     )
@@ -44,11 +46,12 @@ export async function PUT (
 
 export async function DELETE (
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await dbConnect()
-    const song = await Song.findByIdAndDelete(params.id)
+    const { id } = await params
+    const song = await Song.findByIdAndDelete(id)
     if (!song) {
       return NextResponse.json({ error: 'Song not found' }, { status: 404 })
     }
