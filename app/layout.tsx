@@ -3,16 +3,17 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import StructuredData from './components/StructuredData'
 import { SongsProvider } from './context/SongsContext'
 
 export const metadata: Metadata = {
   title: {
-    default: 'ಭಕ್ತಿ ಗೀತೆಗಳು - Devotional Songs Collection | Mudralu Temple',
+    default: 'ಭಕ್ತಿ ಗೀತೆಗಳು - Devotional Songs Collection | Mudralu Temple | in Karkala , Mudar',
     template: '%s | Mudralu Temple'
   },
-  description: 'Complete collection of Kannada devotional songs, bhajans, and spiritual lyrics. Traditional Hindu devotional music with lyrics for meditation and worship.',
+  description: 'Complete collection of Kannada devotional songs, bhajans, and spiritual lyrics. Traditional Hindu devotional music with lyrics for meditation and worship. | Moodbidri, Mangalore,Karkala, Dakshina Kannada (DK)',
   keywords: [
+    'Bhajana mandali in karkala',
+    '20 members in team',
     'kannada devotional songs',
     'bhajans',
     'spiritual songs',
@@ -22,7 +23,9 @@ export const metadata: Metadata = {
     'devotional music',
     'bhakti geethe',
     'religious songs',
-    'temple songs'
+    'temple songs',
+    'mudralu',
+    'Mudaru'
   ],
   authors: [{ name: 'Mudralu Temple', url: 'https://mudralu.netlify.app' }],
   creator: 'Mudralu Temple',
@@ -85,10 +88,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' }
+      { url: '/logo-png.png', sizes: '512x512', type: 'image/png' }
     ],
     apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
+      { url: '/logo-png.png', sizes: '180x180', type: 'image/png' }
     ],
     shortcut: '/favicon.ico'
   },
@@ -124,7 +127,6 @@ export default function RootLayout ({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fff7f1]`}
       >
-        <StructuredData />
         <SongsProvider>
           <Navbar />
           <main className='min-h-[80vh]'>{children}</main>
