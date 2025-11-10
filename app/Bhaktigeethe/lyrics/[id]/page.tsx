@@ -21,7 +21,7 @@ function BhajaneDetailPage ({ params }: { params: Promise<{ id: string }> }) {
         {song?.title || 'No title found'}
       </h1>
 
-      <div className='bg-white shadow-md mx-auto p-6 sm:p-8 rounded-2xl max-w-3xl text-center leading-relaxed'>
+      <div className='bg-white shadow-md mx-auto p-6 sm:p-8 rounded-2xl max-w-3xl leading-relaxed'>
         <div
           className='mb-6 text-gray-800 text-lg leading-relaxed lyrics-content'
           dangerouslySetInnerHTML={{
