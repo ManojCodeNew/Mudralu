@@ -10,6 +10,17 @@ interface Song {
   createdAt: string
 }
 
+export const metadata = {
+  title: "Kannada Bhakti Geethe – Song List",
+  description:
+    "Browse all Kannada Bhakti Geethe with full lyrics. Updated devotional collection.",
+  keywords: [
+    "Bhakti Geethe list",
+    "Kannada devotional lyrics",
+    "Bhajane songs",
+  ],
+};
+
 export default function BhaktigeetheList () {
 
   const { songs, loading, error } = useSongs()

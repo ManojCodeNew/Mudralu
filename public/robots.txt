@@ -35,3 +35,7 @@ Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://mudralu.netlify.app/sitemap.xml
+
+User-agent: *
+Allow: /
+Sitemap: https://mudralu.netlify.app/sitemap.xml
